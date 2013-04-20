@@ -4,6 +4,7 @@
  */
 package Controle;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 
@@ -13,7 +14,7 @@ import java.util.LinkedList;
  */
 public class Hash {
 
-    private LinkedList<ItemdaLista> lista = new LinkedList<>();
+    private ArrayList<ItemdaLista> lista = new ArrayList<>(2000000);
 
     public boolean adiciona(Pacote p) {
         boolean encontrei = false;
@@ -26,12 +27,14 @@ public class Hash {
 
         }
         if (encontrei == false) {
+            if (p.getValorB()==420968)
+                System.out.println("ADD");
             lista.add(new ItemdaLista(p.getValorB(), p));
         }
         return true;
     }
 
-    public LinkedList get() {
+    public ArrayList get() {
 
         return lista;
     }

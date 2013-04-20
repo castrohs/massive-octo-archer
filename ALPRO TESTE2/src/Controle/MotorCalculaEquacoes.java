@@ -14,7 +14,7 @@ import java.util.LinkedList;
 public class MotorCalculaEquacoes {
 
     private LinkedList numerosPerfeitos = new LinkedList();
-    private int limite = 20000;
+    private int limite = 2000000;
 
     public MotorCalculaEquacoes() {
     }
@@ -844,13 +844,14 @@ public class MotorCalculaEquacoes {
         System.out.println("laço 1");
         for (Object per : sol2geraLista) {
             long perx1 = (long) per;
-            long y = 2;
-            for (long x = 3; x < perx1; x++) {
+            long y = 0;
+            for (long x = perx1; x > 0; x--) {
                 //for (long y = 2; y < x; y++) {
                 if(y>x){
-                    y=2;
+                    y=0;
+                    break;
                 }
-                    if (perx1 != x && perx1 != y) {
+                     if (perx1 != x && perx1 != y) {
                         if (perx1 == (x + y) || perx1 == (x - y)) {
                             if (checkValues(x, y)) {
                                 //listaXYpossiveis.add(new long[]{x, y});
@@ -863,7 +864,37 @@ public class MotorCalculaEquacoes {
              //   }
             }
         }
-         
+        //sol2geraLista
+//          ArrayList get = listaXYpossiveis.get();
+//        for (Object per : get) {
+//           ItemdaLista perx1 = (ItemdaLista) per;
+//            long numero = perx1.getNumero();
+//            LinkedList<Pacote> lista = perx1.getLista();
+//            
+//            long x = 3;
+//            long y = 2;
+//            
+//            for (long z = 3; z < x; z++) {
+//                //for (long y = 2; y < x; y++) {
+//                if(y>x){
+//                    y=2;
+//                }
+//                if(x>limite){
+//                  break;
+//                }
+//                   
+//                        if (perx1.getNumero() == (x + y) || perx1.getNumero() == (x - y)) {
+//                            if (checkValues(x, y)) {
+//                                //listaXYpossiveis.add(new long[]{x, y});
+////                                listaXYpossiveis.adiciona(new Pacote(x, y));
+//                            System.out.println("perx1: " + perx1 + " " + " 1: " + x + " 2: " + y);
+//                            }
+//                        }
+//                    
+//                    y++;
+//             //   }
+//            }
+//        }
 
          System.out.println(listaXYpossiveis.size());
     }
